@@ -16,4 +16,7 @@
 
 +(NSArray *) fetchdata;
 
+-(id) inittitle:(NSString*)title initprice:(NSInteger*)price;
+
+
 @end
