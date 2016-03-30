@@ -128,7 +128,7 @@
                                 </connections>
                             </stepper>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.27450981736183167" green="0.058823533356189728" blue="0.058823533356189728" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="AUO-v8-E4H" firstAttribute="centerX" secondItem="ruj-py-xuM" secondAttribute="centerX" id="7aG-3W-LAo"/>
                             <constraint firstItem="AUO-v8-E4H" firstAttribute="trailing" secondItem="ruj-py-xuM" secondAttribute="trailingMargin" constant="10" id="Hxc-TO-kya"/>

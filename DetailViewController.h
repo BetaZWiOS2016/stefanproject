@@ -12,7 +12,7 @@
 @interface DetailViewController : UIViewController
 
 @property (strong,nonatomic) Item *item;
-
+@property (strong, nonatomic) CAGradientLayer *gradient;
 
 
 @end
