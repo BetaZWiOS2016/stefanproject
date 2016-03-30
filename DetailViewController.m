@@ -60,12 +60,12 @@
     
     animation.fromValue             = fromColors;
     animation.toValue               = toColors;
-    animation.duration              = 30.00;
+    animation.duration              = 11;
     animation.removedOnCompletion   = NO;
     animation.fillMode              = kCAFillModeForwards;
     animation.timingFunction        = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     animation.delegate              = self;
-    
+    animation.repeatCount           =HUGE_VALF;
     // Add the animation to our layer
     
     [self.gradient addAnimation:animation forKey:@"animateGradient"];
