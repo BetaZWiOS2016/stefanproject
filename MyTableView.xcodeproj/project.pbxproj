@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E056AADC1CABF36200D96919 /* apple_416x416.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E056AADB1CABF36200D96919 /* apple_416x416.jpg */; };
 		E0C5C43B1C98085600A61F3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C5C43A1C98085600A61F3D /* main.m */; };
 		E0C5C43E1C98085600A61F3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C5C43D1C98085600A61F3D /* AppDelegate.m */; };
 		E0C5C4411C98085600A61F3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C5C4401C98085600A61F3D /* ViewController.m */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E056AADB1CABF36200D96919 /* apple_416x416.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = apple_416x416.jpg; path = ../../Downloads/apple_416x416.jpg; sourceTree = "<group>"; };
 		E0C5C4361C98085600A61F3D /* MyTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C5C43A1C98085600A61F3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0C5C43C1C98085600A61F3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,6 +98,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E056AAD81CABB48400D96919 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E0C5C46C1C98096400A61F3D /* MyUITableTableViewController.h */,
+				E0C5C46D1C98096500A61F3D /* MyUITableTableViewController.m */,
+				E0C5C4721C981AA200A61F3D /* MyCellTableViewCell.h */,
+				E0C5C4731C981AA200A61F3D /* MyCellTableViewCell.m */,
+				E0DD109A1C985FC5009AAE33 /* DetailViewController.m */,
+				E0DD10991C985FC5009AAE33 /* DetailViewController.h */,
+				E0C5C43F1C98085600A61F3D /* ViewController.h */,
+				E0C5C4401C98085600A61F3D /* ViewController.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		E056AAD91CABB4AD00D96919 /* application */ = {
+			isa = PBXGroup;
+			children = (
+				E0C5C43C1C98085600A61F3D /* AppDelegate.h */,
+				E0C5C43D1C98085600A61F3D /* AppDelegate.m */,
+				E0F9F5711C98451D00D38C66 /* NSString+Utils.h */,
+				E0F9F5721C98451D00D38C66 /* NSString+Utils.m */,
+			);
+			name = application;
+			sourceTree = "<group>";
+		};
+		E056AADA1CABB4C400D96919 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E0C5C46F1C980C1000A61F3D /* Person.h */,
+				E0C5C4701C980C1000A61F3D /* Person.m */,
+				E0F54BA11CAAC2E400C677BD /* Item.h */,
+				E0F54BA21CAAC2E400C677BD /* Item.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		E0C5C42D1C98085500A61F3D = {
 			isa = PBXGroup;
 			children = (
@@ -119,27 +158,15 @@
 		E0C5C4381C98085600A61F3D /* MyTableView */ = {
 			isa = PBXGroup;
 			children = (
-				E0DD109A1C985FC5009AAE33 /* DetailViewController.m */,
-				E0DD10991C985FC5009AAE33 /* DetailViewController.h */,
-				E0C5C43C1C98085600A61F3D /* AppDelegate.h */,
-				E0C5C43D1C98085600A61F3D /* AppDelegate.m */,
-				E0C5C43F1C98085600A61F3D /* ViewController.h */,
-				E0C5C4401C98085600A61F3D /* ViewController.m */,
+				E056AADA1CABB4C400D96919 /* model */,
+				E056AAD91CABB4AD00D96919 /* application */,
+				E056AAD81CABB48400D96919 /* UI */,
 				E0C5C4421C98085600A61F3D /* Main.storyboard */,
+				E056AADB1CABF36200D96919 /* apple_416x416.jpg */,
 				E0C5C4451C98085600A61F3D /* Assets.xcassets */,
 				E0C5C4471C98085600A61F3D /* LaunchScreen.storyboard */,
 				E0C5C44A1C98085600A61F3D /* Info.plist */,
 				E0C5C4391C98085600A61F3D /* Supporting Files */,
-				E0C5C46C1C98096400A61F3D /* MyUITableTableViewController.h */,
-				E0C5C46D1C98096500A61F3D /* MyUITableTableViewController.m */,
-				E0C5C46F1C980C1000A61F3D /* Person.h */,
-				E0C5C4701C980C1000A61F3D /* Person.m */,
-				E0C5C4721C981AA200A61F3D /* MyCellTableViewCell.h */,
-				E0C5C4731C981AA200A61F3D /* MyCellTableViewCell.m */,
-				E0F9F5711C98451D00D38C66 /* NSString+Utils.h */,
-				E0F9F5721C98451D00D38C66 /* NSString+Utils.m */,
-				E0F54BA11CAAC2E400C677BD /* Item.h */,
-				E0F54BA21CAAC2E400C677BD /* Item.m */,
 			);
 			path = MyTableView;
 			sourceTree = "<group>";
@@ -276,6 +303,7 @@
 				E0C5C4491C98085600A61F3D /* LaunchScreen.storyboard in Resources */,
 				E0C5C4461C98085600A61F3D /* Assets.xcassets in Resources */,
 				E0C5C4441C98085600A61F3D /* Main.storyboard in Resources */,
+				E056AADC1CABF36200D96919 /* apple_416x416.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

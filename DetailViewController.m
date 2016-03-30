@@ -7,7 +7,7 @@
 //
 
 #import "DetailViewController.h"
-#import "Person.h"
+#import "Item.h"
 
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelName;
@@ -21,17 +21,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSLog(@"Detailview has loaded with person %@", _person);
+  //  NSLog(@"Detailview has loaded with person %@", _person);
     _labelName.textAlignment = NSTextAlignmentCenter;
-    _labelName.text = _person.volledigenaam;
+    _labelName.text = _item.title;
     
-    _labelWage.text = [NSString stringWithFormat:@"%ld",(long)_person.wage];
-    _stepper.value = _person.wage;
+    _labelWage.text = [NSString stringWithFormat:@"%ld",(long)_item.price];
+    _stepper.value = _item.price;
 }
 
 - (IBAction)stepperValueChanged:(UIStepper *)sender{
-    _person.wage = _stepper.value;
-  _labelWage.text = [NSString stringWithFormat:@"%ld",(long)_person.wage];
+    _item.price = _stepper.value;
+     _labelWage.text = [NSString stringWithFormat:@"%ld",(long)_item.price];
     
  }
 

@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Person.h"
+#import "Item.h"
 
 @interface DetailViewController : UIViewController
 
-@property (strong,nonatomic) Person *person;
+@property (strong,nonatomic) Item *item;
 
 
 

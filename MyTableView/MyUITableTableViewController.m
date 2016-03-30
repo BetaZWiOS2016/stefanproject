@@ -7,7 +7,7 @@
 //
 
 #import "MyUITableTableViewController.h"
-#import "Person.h"
+#import "Item.h"
 #import "MyCellTableViewCell.h"
 #import "NSString+Utils.h"
 #import "DetailViewController.h"
@@ -23,60 +23,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-        
     [self loadData];
-    
    
 }
-
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableView reloadData];
 }
 
-
 -(void) loadData{
     
-    NSArray *receivedData = [Person fetchpeople];
-    
-    //1) Sort the data
-    NSSortDescriptor *fnameSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"voornaam"                                             ascending:YES];
-     NSSortDescriptor * lnameSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"achternaam"                                             ascending:YES];
-    receivedData = [receivedData sortedArrayUsingDescriptors:@[fnameSortDescriptor, lnameSortDescriptor]];
-    
-    
-    //2) Initialize
+    NSArray *receivedData = [Item fetchdata];
+
     self.dataSource = [[NSMutableArray alloc] init];
-    NSMutableArray *currentLetterSection= [[NSMutableArray alloc]init];
-    [self.dataSource addObject:currentLetterSection];
-    
-    NSString * currentLetter = @"";
-    if ([receivedData count] > 0) {
-        Person *firstPerson = [receivedData firstObject];
-        currentLetter = [firstPerson.voornaam firstLetterInUpperCase];
-    }
-    
-    for (Person * person in receivedData) {
-        NSString *personLetter = [person.voornaam firstLetterInUpperCase];
-        if ([personLetter isEqualToString:currentLetter]) {
-            [currentLetterSection addObject:person];
-        } else {
-            currentLetter = personLetter;
-            currentLetterSection= [[NSMutableArray alloc]init];
-            [self.dataSource addObject:currentLetterSection];
-            [currentLetterSection addObject:person];
-        }
-        
+
+    for (Item * item in receivedData) {
+     
+        [self.dataSource addObject:item];
+
     }
     
     NSLog(@"Data source = %@", self.dataSource);
-    
     
 }
 
@@ -89,46 +57,43 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return self.dataSource.count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return [self.dataSource[section] count];
+    return self.dataSource.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MyCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyIdentifier" forIndexPath:indexPath];
-    //tableView.dataSource
-  //  cell.textLabel.text = []
-    // Configure the cell...
-    NSArray *currentSection =  self.dataSource[indexPath.section];
-    Person *currentPerson = currentSection[indexPath.row];
-    [cell setupcell:currentPerson];
+
+    Item *currentItem = self.dataSource[indexPath.row];
+    [cell setupcell:currentItem];
     return cell;
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     
-    NSMutableArray *currentSection = self.dataSource[section];
-    NSString *sectionLetter = @"";
-    if (currentSection.count > 0) {
-        Person *person = [currentSection firstObject];
-        sectionLetter =[person.voornaam firstLetterInUpperCase];
-    }
+   // NSMutableArray *currentSection = self.dataSource[section];
+   // NSString *sectionLetter = @"";
+   // if (currentSection.count > 0) {
+   //     Person *person = [currentSection firstObject];
+   //     sectionLetter =[person.voornaam firstLetterInUpperCase];
+   // }
     
-    return sectionLetter;
+   // return sectionLetter;
     
-}
+//}
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSArray *currentSection =  self.dataSource[indexPath.section];
-    Person *currentPerson = currentSection[indexPath.row];
+
+    Item *currentItem = self.dataSource[indexPath.row];
     
-    [self performSegueWithIdentifier:@"showDetailsSegue" sender:currentPerson];
-    NSLog(@"Index Path is %@ ! Seleced is %@", indexPath, currentPerson);
+    [self performSegueWithIdentifier:@"showDetailsSegue" sender:currentItem];
+    NSLog(@"Index Path is %@ ! Seleced is %@", indexPath, currentItem);
 }
 
 /*
@@ -177,8 +142,8 @@
     if([segue.identifier isEqualToString:@"showDetailsSegue"]){
         DetailViewController *detailViewController  = [segue destinationViewController];
       
-        if ([sender isKindOfClass:[Person class]]) {
-            detailViewController.person = sender;
+        if ([sender isKindOfClass:[Item class]]) {
+            detailViewController.item = sender;
         }
     }
 }

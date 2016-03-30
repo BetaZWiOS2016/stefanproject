@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Person.h"
+#import "Item.h"
 
 @interface MyCellTableViewCell : UITableViewCell
 
@@ -17,6 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *wageLabel;
 
--(void) setupcell :(Person *)person;
+-(void) setupcell :(Item *)item;
 
 @end

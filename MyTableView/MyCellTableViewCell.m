@@ -21,10 +21,14 @@
     
     // Configure the view for the selected state
 }
--(void) setupcell:(Person *)person{
-    self.firstnamelabel.text = person.voornaam;
-    self.lastNameLabel.text = person.achternaam;
-    self.wageLabel.text = [NSString stringWithFormat:@"%ld",(long)person.wage];
+-(void) setupcell:(Item *)item{
+
+    NSDateFormatter * df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-M-d"];
+        
+    self.firstnamelabel.text = item.title;
+    self.lastNameLabel.text = [df stringFromDate:item.date];
+    self.wageLabel.text = [NSString stringWithFormat:@"%ld",(long)item.price];
 }
 
 @end
