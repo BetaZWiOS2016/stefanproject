@@ -56,7 +56,7 @@
                                         <constraint firstItem="7VG-py-1yn" firstAttribute="centerY" secondItem="Pgb-X4-40G" secondAttribute="centerY" id="uxU-gH-fD0"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="firstnamelabel" destination="uXU-cd-xzi" id="h3T-OD-PFB"/>
                                     <outlet property="lastNameLabel" destination="kba-hV-VRw" id="F1R-OE-ny9"/>
